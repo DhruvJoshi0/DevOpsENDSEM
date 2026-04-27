@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>User Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>My To-Do List</h1>
-        <div class="input-container">
-            <input type="text" id="taskInput" placeholder="Add a new task...">
-            <button id="addBtn">Add</button>
+    <div class="login-container">
+        <h1>User Login</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <span id="emailError" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <span id="passwordError" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number">
+                <span id="phoneError" class="error"></span>
+            </div>
+
+            <div class="form-group checkbox">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Remember me</label>
+            </div>
+
+            <button type="submit" id="loginBtn" class="login-btn">Login</button>
+        </form>
+
+        <div id="successMessage" class="success hidden">
+            <h2>Login Successful!</h2>
+            <p>Email: <span id="displayEmail"></span></p>
+            <p>Phone: <span id="displayPhone"></span></p>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
         </div>
-        <ul id="taskList" class="task-list">
-        </ul>
+
+        <div id="errorContainer" class="error-container hidden"></div>
     </div>
     <script src="script.js"></script>
 </body>
